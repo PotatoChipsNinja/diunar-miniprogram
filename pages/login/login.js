@@ -31,7 +31,7 @@ Page({
       })
     } else {
       wx.request({
-        url: "https://diunar.tk:3001/login",
+        url: "https://diunar.jl-lagrange.com.cn:3001/login",
         data: {
           usrid: this.data.usrid,
           passwd: this.data.passwd

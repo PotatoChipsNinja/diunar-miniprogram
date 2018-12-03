@@ -47,7 +47,7 @@ Page({
       })
     } else {
       wx.request({
-        url: "https://diunar.tk:3001/addData",
+        url: "https://diunar.jl-lagrange.com.cn:3001/addData",
         data: {
           name: app.globalData.nickname,
           usrid: app.globalData.usrid,

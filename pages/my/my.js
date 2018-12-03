@@ -14,7 +14,7 @@ Page({
   getData: function () {
     var that = this
     wx.request({
-      url: "https://diunar.tk:3001/outData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/outData",
       success: function (res) {
         //console.log(res.data)
         var myLost = 0, myFind = 0, stateLost = 0, stateFind = 0
@@ -77,7 +77,7 @@ Page({
         placeholder: '请输入新密码',
         onConfirm(e, response) {
           wx.request({
-            url: "https://diunar.tk:3001/modPsw",
+            url: "https://diunar.jl-lagrange.com.cn:3001/modPsw",
             data: {
               usrid: that.data.usrid,
               passwd: response
@@ -102,7 +102,7 @@ Page({
       placeholder: '请输入原密码',
       onConfirm(e, response) {
         wx.request({
-          url: "https://diunar.tk:3001/login",
+          url: "https://diunar.jl-lagrange.com.cn:3001/login",
           data: {
             usrid: that.data.usrid,
             passwd: response
@@ -182,7 +182,7 @@ Page({
     update.finderContact = ""
     update.state = 0
     wx.request({
-      url: "https://diunar.tk:3001/modData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/modData",
       data: update,
       fail: function (res) {
         console.log(res)
@@ -194,7 +194,7 @@ Page({
     var update = this.data.res.data.data[index]
     update.state = 2
     wx.request({
-      url: "https://diunar.tk:3001/modData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/modData",
       data: update,
       fail: function (res) {
         console.log(res)
@@ -255,7 +255,7 @@ Page({
 
   del: function (id) {
     wx.request({
-      url: "https://diunar.tk:3001/delData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/delData",
       data: {
         id: id
       },

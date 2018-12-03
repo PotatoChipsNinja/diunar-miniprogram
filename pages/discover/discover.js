@@ -10,7 +10,7 @@ Page({
   getData: function () {
     var that = this
     wx.request({
-      url: "https://diunar.tk:3001/outData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/outData",
       success: function (res) {
         //console.log(res.data)
         for (var index = 0, len = res.data.data.length, num = 0; index < len; index++) {
@@ -87,7 +87,7 @@ Page({
     update.finderContact = content
     update.state = 1
     wx.request({
-      url: "https://diunar.tk:3001/modData",
+      url: "https://diunar.jl-lagrange.com.cn:3001/modData",
       data: update,
       fail: function (res) {
         console.log(res)

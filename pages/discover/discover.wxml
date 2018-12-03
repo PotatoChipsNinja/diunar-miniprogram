@@ -1,0 +1,31 @@
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+
+<view class="head">
+  <view class="title">你好，{{nickname}}！</view>
+  <view class="desc">当前共有{{showNum}}件失物的找回需要您的帮助</view>
+</view>
+
+<view class="msg" hidden="{{showNum > 0}}">
+<wux-prompt visible="{{showNum == 0}}" title="空空如也" text="暂时没有相关数据" />
+</view>
+
+<view class="content">
+  <block wx:for="{{res.data.data}}" wx:key="id">
+    <view hidden="{{item.state > 0}}">
+      <wux-wing-blank size="default">
+        <wux-card data-id="{{item.id}}" title="{{item.obj}}" extra="{{item.name}}" bindtap="showDetail">
+          <view class="wux-ellipsis--l2" data-id="{{item.id}}" slot="body">{{item.detail}}</view>
+          <view data-id="{{item.id}}" slot="footer">丢失日期：{{item.date}}</view>
+        </wux-card>
+      </wux-wing-blank>
+      <wux-white-space size="large" />
+    </view>
+  </block>
+
+  <view hidden="{{showNum == 0}}">
+    <wux-divider dashed>
+      <text class="bottomm">已经到底了</text>
+    </wux-divider>
+  </view>
+</view>

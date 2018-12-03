@@ -1,0 +1,73 @@
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+
+<wux-accordion-group default-current="{{ ['0'] }}">
+    <wux-accordion title="账户信息" disabled showArrow="{{false}}">
+      <view>昵称：{{nickname}}</view>
+      <view>学号：{{usrid}}</view>
+    </wux-accordion>
+    <wux-accordion title="丢失与找回">
+      <wux-tabs controlled current="{{current}}" bindchange="onChange">
+        <wux-tab key="tab1" title="我的丢失（{{stateLost}}待确认，共{{myLost}}）"></wux-tab>
+        <wux-tab key="tab2" title="我的找回（{{stateFind}}待确认，共{{myFind}}）"></wux-tab>
+      </wux-tabs>
+
+      <view hidden="{{current == 'tab2'}}">
+        <view hidden="{{myLost > 0}}" class="wux-text--center"><wux-white-space size="default" />暂无丢失，您可在“发布”中发布寻物启事</view>
+        <block wx:for="{{res.data.data}}" wx:key="id">
+          <view hidden="{{item.usrid != usrid}}">
+            <wux-white-space size="default" />
+            <wux-wing-blank size="default">
+              <wux-card data-id="{{item.id}}" title="{{item.obj}}" extra="{{item.state==0 ? '暂无发现者' : (item.state==1 ? '有人发现' : '已找回')}}" bindtap="{{item.state==0 ? 'ifDel' : (item.state==1 ? 'showFinder' : '')}}">
+                <view class="wux-ellipsis--l2" data-id="{{item.id}}" slot="body">{{item.detail}}</view>
+                <view data-id="{{item.id}}" slot="footer">丢失日期：{{item.date}}</view>
+              </wux-card>
+            </wux-wing-blank>
+            <wux-white-space size="default" />
+          </view>
+        </block>
+      </view>
+
+      <view hidden="{{current == 'tab1'}}">
+        <view hidden="{{myFind > 0}}" class="wux-text--center"><wux-white-space size="default" />暂无找回，您可在“发现”中选择联系失主</view>
+        <block wx:for="{{res.data.data}}" wx:key="id">
+          <view hidden="{{item.finderUsrid != usrid}}">
+            <wux-white-space size="default" />
+            <wux-wing-blank size="default">
+              <wux-card data-id="{{item.id}}" title="{{item.obj}}" extra="{{item.state==1 ? '待失主确认' : '已找回'}}" bindtap="{{item.state==1 ? 'showContact' : ''}}">
+                <view class="wux-ellipsis--l2" data-id="{{item.id}}" slot="body">{{item.detail}}</view>
+                <view data-id="{{item.id}}" slot="footer">丢失日期：{{item.date}}</view>
+              </wux-card>
+            </wux-wing-blank>
+            <wux-white-space size="default" />
+          </view>
+        </block>
+      </view>
+    </wux-accordion>
+    <wux-accordion title="账户操作">
+      <wux-button block outline type="calm" bindtap="changePsw">修改密码</wux-button>
+      <wux-button block outline type="assertive" bindtap="logout">退出登录</wux-button>
+    </wux-accordion>
+    <wux-accordion title="帮助与说明">
+      <view>用户发布的寻物启事共有以下几种状态：</view>
+      <view>　　- 暂无发现者：发布后的初始状态，在“发现”中可见，失主可在“我的丢失”中删除寻物启事</view>
+      <view>　　- 有人发现：有疑似得主，需要失主在“我的丢失”中获取得主信息并确认是否为失物，此状态下寻物启事在“发现”中不可见。若失主确认不是失物，则自动回到“暂无发现者”状态</view>
+      <view>　　- 已找回：失主确认是失物，寻物启事的生命周期结束，在“发现”中不可见</view>
+      <wux-divider show-text="{{ false }}" dashed />
+      <view>用户提供的找回线索共有以下几种状态：</view>
+      <view>　　- 待失主确认：在“发现”中选择联系失主后的初始状态，此时需要在“我的找回”中获取失主信息并与失主取得联系。若失主确认不是失物，则该找回将从“我的找回”中消失</view>
+      <view>　　- 已找回：失主确认是失物，寻物启事的生命周期结束</view>
+    </wux-accordion>
+    <wux-accordion title="服务条款">
+      <view>为使用“丢哪儿”服务，您应当阅读并遵守以下条款。如果您不同意其中任何条款约定，您应立即停止使用服务。</view>
+      <view>　　- 您设置的账户昵称不得违反国家法律法规，否则“丢哪儿”可回收您的账户</view>
+      <view>　　- 账户因您主动泄露或因您遭受他人攻击、诈骗等行为导致的损失及后果，“丢哪儿”不承担责任</view>
+      <view>　　- 对于您在使用“丢哪儿”寻物服务过程中可能造成的经济损失，“丢哪儿”不承担责任</view>
+    </wux-accordion>
+    <wux-accordion title="关于">
+      <view>丢哪儿</view>
+      <view>© 2018</view>
+    </wux-accordion>
+</wux-accordion-group>
+
+

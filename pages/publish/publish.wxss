@@ -1,0 +1,30 @@
+.h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.head {
+  width: 80%;
+  border-radius: 5px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #88D7EC;
+}
+.content {
+  padding-bottom: 5%;
+}
+.title {
+  text-align: left;
+  font-size: 120%;
+  font-weight: 400;
+}
+.desc {
+  margin-top: 3%;
+  color: #585858;
+  text-align: left;
+  font-size: 90%;
+}

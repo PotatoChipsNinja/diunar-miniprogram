@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/publish/publish",
+    "pages/discover/discover",
+    "pages/my/my",
+    "pages/reg/reg"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0152D9",
+    "navigationBarTitleText": "丢哪儿"
+  },
+  "tabBar": {
+    "color": "#909090",
+    "selectedColor": "#0152D9",
+    "backgroundColor": "#F7F7FA",
+    "list": [
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "icons/pub.png",
+        "selectedIconPath": "icons/pub_selc.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "icons/disc.png",
+        "selectedIconPath": "icons/disc_selc.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my_selc.png"
+      }
+    ]
+  }
+}

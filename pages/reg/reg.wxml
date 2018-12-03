@@ -1,0 +1,32 @@
+<view class="head">
+  <view class="title">注册账户</view>
+  <view class="desc">即刻加入丢哪儿大家庭</view>
+</view>
+
+<view class="content">
+  <form>
+    <wux-cell-group>
+      <wux-cell hover-class="none">
+        <wux-input type="number" controlled id="usrid" label="学号" placeholder="请输入您的十位学号" bind:blur="finish" />
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-input password controlled id="passwd" label="密码" placeholder="请设置账户密码" bind:blur="finish" />
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-input controlled id="nickname" label="昵称" placeholder="请设置一个昵称（不可更改）" bind:blur="finish" />
+      </wux-cell>
+    </wux-cell-group>
+    <wux-white-space size="default" />
+
+    <wux-col span="6">
+      <wux-wing-blank size="large">
+        <wux-button block outline type="calm" bind:click="back">返回</wux-button>
+      </wux-wing-blank>
+    </wux-col>
+    <wux-col span="6">
+      <wux-wing-blank size="large">
+        <wux-button block type="calm" bind:click="submit">注册</wux-button>
+      </wux-wing-blank>
+    </wux-col>
+  </form>
+</view>

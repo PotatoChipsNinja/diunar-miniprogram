@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-input": "../../dist/input/index",
+    "wux-textarea": "../../dist/textarea/index",
+    "wux-calendar": "../../dist/calendar/index",
+    "wux-button": "../../dist/button/index",
+    "wux-wing-blank": "../../dist/wing-blank/index"
+  }
+}

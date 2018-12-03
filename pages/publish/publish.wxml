@@ -1,0 +1,33 @@
+<wux-calendar id="wux-calendar" />
+
+<view class='h'>
+  <view class="head">
+    <view class="title">发布寻物启事</view>
+    <view class="desc">为了尽快帮助您找回失物，请如实填写以下信息</view>
+  </view>
+</view>
+
+<view class="content">
+  <form>
+    <wux-cell-group title="失物信息（所有人可见）">
+      <wux-cell hover-class="none">
+        <wux-input controlled id="obj" label="名称" placeholder="失物的大致描述" bind:blur="finish" value="{{value}}" />
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-input controlled id="detail" label="详情" placeholder="失物的详细描述" bind:blur="finish" value="{{value}}" />
+      </wux-cell>
+      <wux-cell title="丢失日期" extra="{{date}}" bind:click="openCalendar"></wux-cell>
+    </wux-cell-group>
+    <wux-cell-group title="失主信息（仅得主可见）">
+      <wux-cell hover-class="none">
+        <wux-input controlled id="realname" label="姓名" placeholder="您的真实姓名" bind:blur="finish" value="{{value}}" />
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-textarea controlled id="contact" label="联系方式" rows="3" cursorSpacing="80" placeholder="您希望提供给得主的联系方式及备注说明，完成输入后请点击“完成”按钮" bind:change="finish" value="{{contact}}" />
+      </wux-cell>
+    </wux-cell-group>
+    <wux-wing-blank size="large">
+      <wux-button block type="calm" bind:click="submit">确认发布</wux-button>
+    </wux-wing-blank>
+  </form>
+</view>

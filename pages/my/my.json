@@ -1,0 +1,15 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-white-space": "../../dist/white-space/index",
+    "wux-button": "../../dist/button/index",
+    "wux-dialog": "../../dist/dialog/index",
+    "wux-tabs": "../../dist/tabs/index",
+    "wux-tab": "../../dist/tab/index",
+    "wux-accordion-group": "../../dist/accordion-group/index",
+    "wux-accordion": "../../dist/accordion/index",
+    "wux-divider": "../../dist/divider/index"
+  }
+}

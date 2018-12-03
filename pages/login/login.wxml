@@ -1,0 +1,29 @@
+<view class="head">
+  <view class="title">登录</view>
+  <view class="desc">予人玫瑰，手有余香</view>
+</view>
+
+<view class="content">
+  <form>
+    <wux-cell-group>
+      <wux-cell hover-class="none">
+        <wux-input type="number" controlled id="usrid" label="学号" placeholder="请输入您的十位学号" bind:blur="finish" />
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-input password controlled id="passwd" label="密码" placeholder="请输入账户密码" bind:blur="finish" />
+      </wux-cell>
+    </wux-cell-group>
+    <wux-white-space size="default" />
+    
+    <wux-col span="6">
+      <wux-wing-blank size="large">
+        <wux-button block outline type="calm" bind:click="reg">注册</wux-button>
+      </wux-wing-blank>
+    </wux-col>
+    <wux-col span="6">
+      <wux-wing-blank size="large">
+        <wux-button block type="calm" bind:click="submit">登录</wux-button>
+      </wux-wing-blank>
+    </wux-col>
+  </form>
+</view>

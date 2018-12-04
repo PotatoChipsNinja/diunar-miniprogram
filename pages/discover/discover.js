@@ -104,6 +104,10 @@ Page({
     })
   },
 
+  onShow: function () {
+    this.getData()
+  },
+
   onPullDownRefresh: function () {
     this.getData()
     setTimeout(function () {
